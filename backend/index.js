@@ -14,6 +14,11 @@ app.use(express.json());
 // Routes
 app.use("/jobs", jobRouter);
 
+// Root route
+app.get("/", (req, res) => {
+    res.send("Job Tracker Backend is running ");
+});
+
 app.listen(process.env.PORT, async () => {
     try {
         await connection
@@ -23,4 +28,4 @@ app.listen(process.env.PORT, async () => {
         console.log("Error while connecting to DB")
         console.log(err)
     }
-}) 
+});
