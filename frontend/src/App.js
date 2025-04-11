@@ -22,7 +22,7 @@ function App() {
 
   return (
     <div className="app-container">
-      <h1 className="app-title">Job Tracker</h1>
+      <h1 className="app-title"> Student Job Tracker</h1>
       <div className="form-wrapper">
         <JobForm refresh={fetchJobs} />
       </div>

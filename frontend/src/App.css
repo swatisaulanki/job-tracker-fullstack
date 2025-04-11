@@ -1,0 +1,50 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+}
+
+.app-container {
+    padding: 0; 
+    margin: 0;   
+    background-color: #f7f7f7;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.app-title {
+    width: 99vw;
+    margin: 0;
+    padding: 10px 0;
+    background-color: #1e1534; 
+    color: white;
+    font-size: 28px;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid #ccc;
+}
+
+/* Responsive Design Below  */
+
+/* Tablet view */
+@media (max-width: 768px) {
+  .app-title {
+    font-size: 24px;
+    padding: 12px 0;
+  }
+}
+
+/* Mobile view */
+@media (max-width: 480px) {
+  .app-title {
+    font-size: 20px;
+    padding: 14px 0;
+    width: 100vw;
+  }
+
+  .app-container {
+    padding: 0 5px;
+  }
+}

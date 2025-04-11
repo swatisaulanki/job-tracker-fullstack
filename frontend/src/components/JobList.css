@@ -1,110 +1,182 @@
-/* General Styles for the Page */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f7f7f7;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    min-height: 100vh;
-    flex-direction: column;
-  }
-  
-  /* Job List Container */
+  font-family: 'Arial', sans-serif;
+  background-color: #f7f7f7;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+/* Job List Container */
+.job-list {
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 2px solid rgb(225, 225, 230);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+/* Header Row */
+.job-list-header {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  font-weight: bold;
+  padding: 12px;
+  background-color: #261230;
+  color: white;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  text-align: center;
+  border: 2px solid rgb(67, 35, 115);
+}
+
+/* Job Card Grid Style */
+.job-card {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #e0e0e0;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  background-color: rgb(213, 220, 220);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+/* Job Card Content */
+.job-card div {
+  font-size: 16px;
+  color: #090909;
+}
+
+/* Status Select */
+.job-card select {
+  padding: 6px;
+  font-size: 15px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: #f8f8f8;
+}
+
+/* View Link */
+.job-card a {
+  color: #007bff;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.job-card a:hover {
+  text-decoration: underline;
+}
+
+/* Delete Button */
+.job-card button {
+  background-color: transparent;
+  border: none;
+  color: #ff4d4f;
+  font-size: 15px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.job-card button:hover {
+  color: #d32f2f;
+}
+
+/* Filters Section */
+.filters {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  padding: 10px 15px;
+  border-radius: 8px;
+  width: 80%;
+  margin: auto;
+  justify-content: right;
+  flex-wrap: wrap; 
+}
+
+/* Dropdown and Date Picker */
+.filters select,
+.filters input[type="date"] {
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  background-color: #261230;
+  color: white;
+  transition: border-color 0.3s;
+}
+
+.filters select:focus,
+.filters input[type="date"]:focus {
+  border-color: #007bff;
+}
+
+/*Responsive Design Below  */
+
+/* Tablet view (768px and down) */
+@media (max-width: 768px) {
   .job-list {
-    width: 100%;
-    max-width: 1000px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    padding: 15px;
   }
-  
-  /* Header Row */
-  .job-list-header {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    font-weight: bold;
-    padding: 12px;
-    background-color: #efefef;
-    border-radius: 6px;
-    margin-bottom: 12px;
-    text-align: center;
-  }
-  
-  /* Job Card Grid Style */
+
+  .job-list-header,
   .job-card {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    font-size: 15px;
+    gap: 8px;
+  }
+
+  .filters {
+    justify-content: center;
     gap: 10px;
-    border: 1px solid #e0e0e0;
-    padding: 12px;
-    margin-bottom: 10px;
-    border-radius: 6px;
-    background-color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    text-align: center;
   }
-  
-  /* Job Card Content */
-  .job-card div {
-    font-size: 16px;
-    color: #333;
-  }
-  
-  /* Status Select */
-  .job-card select {
+
+  .filters select,
+  .filters input[type="date"] {
+    font-size: 14px;
     padding: 6px;
-    font-size: 15px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    background-color: #f8f8f8;
   }
-  
-  /* View Link */
-  .job-card a {
-    color: #007bff;
-    font-size: 15px;
-    text-decoration: none;
+}
+
+/* Mobile view (480px and below) */
+@media (max-width: 480px) {
+  .job-list {
+    width: 95%;
+    padding: 10px;
   }
-  
-  .job-card a:hover {
-    text-decoration: underline;
+
+  .job-list-header,
+  .job-card {
+    grid-template-columns: 1fr;
+    text-align: left;
+    font-size: 14px;
   }
-  
-  /* Delete Button */
-  .job-card button {
-    background-color: transparent;
-    border: none;
-    color: #ff4d4f;
-    font-size: 15px;
-    cursor: pointer;
-    transition: color 0.3s;
+
+  .job-card div {
+    margin-bottom: 6px;
   }
-  
-  .job-card button:hover {
-    color: #d32f2f;
+
+  .filters {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
   }
-  
-  /* Responsive Grid (Mobile Friendly) */
-  @media (max-width: 768px) {
-    .job-list-header,
-    .job-card {
-      grid-template-columns: 1fr 1fr;
-    }
+
+  .filters select,
+  .filters input[type="date"] {
+    width: 100%;
+    font-size: 14px;
   }
-  
-  @media (max-width: 480px) {
-    .job-list-header,
-    .job-card {
-      grid-template-columns: 1fr;
-    }
-  
-    .job-card {
-      text-align: left;
-    }
-  }
-  
+}

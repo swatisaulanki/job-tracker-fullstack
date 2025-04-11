@@ -38,12 +38,12 @@ function JobForm({ refresh }) {
   };
 
   return (
-    <div className="flex justify-center mt-10 px-4">
-      <div className="w-full max-w-md">
-        {error && <div className="text-red-500 mb-4">{error}</div>}
+    <div className="form-wrapper">
+      <div className="form-container">
+        {error && <div className="error-message">{error}</div>}
 
-        <form onSubmit={handleSubmit} className="bg-white p-6 rounded shadow space-y-4">
-          <h1 className="text-2xl font-bold text-center text-gray-800">Add Job Application</h1>
+        <form onSubmit={handleSubmit} className="job-form">
+          <h1 className="form-title">Add Job Application</h1>
 
           <input
             name="company"
@@ -51,7 +51,7 @@ function JobForm({ refresh }) {
             onChange={handleChange}
             placeholder="Company"
             required
-            className="border p-2 w-full rounded"
+            className="form-input"
           />
           <input
             name="role"
@@ -59,13 +59,13 @@ function JobForm({ refresh }) {
             onChange={handleChange}
             placeholder="Role"
             required
-            className="border p-2 w-full rounded"
+            className="form-input"
           />
           <select
             name="status"
             value={form.status}
             onChange={handleChange}
-            className="border p-2 w-full rounded"
+            className="form-input"
           >
             <option>Applied</option>
             <option>Interview</option>
@@ -78,19 +78,16 @@ function JobForm({ refresh }) {
             value={form.appliedDate}
             onChange={handleChange}
             required
-            className="border p-2 w-full rounded"
+            className="form-input"
           />
           <input
             name="link"
             value={form.link}
             onChange={handleChange}
             placeholder="Job Link"
-            className="border p-2 w-full rounded"
+            className="form-input"
           />
-          <button
-            type="submit"
-            className="bg-blue-500 text-white p-2 rounded w-full hover:bg-blue-600 transition"
-          >
+          <button type="submit" className="form-button">
             Add Job
           </button>
         </form>
