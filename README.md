@@ -8,7 +8,7 @@ A full-stack web application built using the MERN stack to help students efficie
 This repository contains two main folders:
 
 - `/frontend` – React.js app (client-side)
-- `/backend` – Express.js + MongoDB API (server-side)
+- `/backend` – Express.js + Node.js + MongoDB API (server-side)
 
 ---
 
